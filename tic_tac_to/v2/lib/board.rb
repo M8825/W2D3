@@ -5,7 +5,8 @@ class Board
 
   # Accepts num (Integer). Parameter represents size of the grid
   # Initializes the grid [Array] of num (Integer) size
-  def initialize(num)
+  def initialize(num, size)
+    @size = size
     @grid = Array.new(num) { Array.new(num, '_') }
   end
 
@@ -29,7 +30,7 @@ class Board
   # Checks if board is valid (valid?) and given position is empty (empty?(position))
   def place_mark(position, mark)
     if valid?(position) && empty?(position)
-      @grid[position[0]][position[1]] = mark
+      @grid[position[0]][position[1]] = mark # foo = [["_"], ["_"]] => foo[0][0] = :X => [[":X"], ["_"]]
     else
       raise RuntimeError.new("invalid Mark")
     end
