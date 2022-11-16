@@ -12,7 +12,7 @@ class Board
     # Accepts position (Array)
     # Returns boolean indication wether or not given position is "in bounds"
   def valid?(position)
-    row = position[0]
+    row = postion[0]
     col = position[1]
 
     @grid[row] != nil && @grid[row][col] != nil && (row >= 0 && col >= 0)
